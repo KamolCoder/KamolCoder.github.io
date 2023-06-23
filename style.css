@@ -1,4 +1,8 @@
 body {
+    margin:0;
+    padding:0;
+    color:var(--tg-theme-text-color)
+    background:var(--tg-theme-bg-color)
     width: 95%;
 }
 img {
@@ -10,10 +14,8 @@ br {
     display: block;
 }
 
-div.main-forma {
-    width: 100%;
-    font-size: 25px;
-    align: center;
+div.container {
+    max-width: 390px;
 }
 
 button {
@@ -25,7 +27,7 @@ button {
     background-color: orange;
     border:none !important;
     border-radius: 5px;
-    width: 100%;
+    width: 80%;
 
 }
 button.matem {
