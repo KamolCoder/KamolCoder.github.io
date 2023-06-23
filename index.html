@@ -8,35 +8,42 @@
     <link rel="stylesheet" href="style.css">
     <title>Street-77</title>
 </head>
-<body style="">
-
-<h1>Ground-Zero Booking</h1>
+<body>
+<img src="e7e29bfe39c9149a312325412f5f1561.png" style="margin-top:2rem">
+<!--<h3 style="text-align:center;margin-top:0rem;">сервис бронирования</h3>-->
 <div class="main-forma">
     <form method="post">
-        <label for="choose">Выберите комнату :</label>
-        <div class="polya">
-            <select id="choose" name="choose">
-                <option value="Рабочая зона">Рабочая зона</option>
-                <option value="Ивент Зона">Ивент Зона</option>
-                <option value="Большой митинг рум">Большой митинг рум</option>
-                <option value="Малый митинг рум">Малый митинг рум</option>
-            </select>
+        <div class="kolonka">
+            <label for="choose">Выберите комнату :</label>
+            <div class="polya">
+                <select id="choose" name="choose">
+                    <option value="Рабочая зона">Рабочая зона</option>
+                    <option value="Ивент Зона">Ивент Зона</option>
+                    <option value="Большой митинг рум">Большой митинг рум</option>
+                    <option value="Малый митинг рум">Малый митинг рум</option>
+                </select>
+            </div>
         </div>
-        <label>На сколько/час:</label>
-        <div class="polya">
-            <button type="button"
-                    onclick="document.getElementById('numberinput').stepDown()">-
-            </button>
-            <input type="number" id="numberinput" name="mynumber" value="0" min="0"
-                   max="10"
-                   step="1">
-            <button type="button"
-                    onclick="document.getElementById('numberinput').stepUp()">+
-            </button>
+        <div class="kolonka">
+            <label>На сколько/час:</label>
+            <div class="polya">
+                <button class='matem' type="button"
+                        onclick="document.getElementById('numberinput').stepDown()">-
+                </button>
+                <input type="number" id="numberinput" name="mynumber" value="0" min="0"
+                       max="10"
+                       step="1">
+                <button class='matem' type="button"
+                        onclick="document.getElementById('numberinput').stepUp()">+
+                </button>
+            </div>
         </div>
-        <label for="start">Начало :</label>
-        <div class="polya">
-            <input type="datetime-local" id="start" name="start">
+        <div class="kolonka">
+
+            <label for="start">Выберите дату :</label>
+            <div class="polya">
+                <input type="datetime-local" id="start" name="start">
+            </div>
         </div>
         <button type="submit">Submit</button>
     </form>
