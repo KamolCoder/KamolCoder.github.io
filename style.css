@@ -5,6 +5,8 @@ body {
     background:var(--tg-theme-bg-color)
     width: 95%;
 }
+
+
 img {
     width: 100%;
 }
@@ -39,7 +41,10 @@ div.kolonka {
     text-align: center;
 
 }
-
+li.selected{
+    background-color:blue;
+    color:white;
+}
 
 input,select {
     width: 100%;
@@ -47,10 +52,15 @@ input,select {
     border-radius: 5px;
     height: 3rem;
     border: 1px solid orange;
-    text-align: center
+    text-align: center;
+
 }
 
 div.polya{
     display:flex;
     margin: 5px;
+}
+
+.btn:hover {
+    background:blue;
 }
