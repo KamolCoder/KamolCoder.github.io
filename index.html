@@ -11,40 +11,38 @@
 <body>
 <div class="container">
     <img src="e7e29bfe39c9149a312325412f5f1561.png" style="margin-top:2rem">
-        <div class="kolonka">
-            <label for="choose">Выберите комнату :</label>
-            <div class="polya">
-                <select id="choose" name="choose">
-                    <option value="Ивент Зона">Ивент Зона</option>
-                    <option value="Рабочая зона">Рабочая зона</option>
-                    <option value="Большой митинг рум">Большой митинг рум</option>
-                    <option value="Малый митинг рум">Малый митинг рум</option>
-                </select>
-            </div>
+    <div class="kolonka">
+        <label>Выберите комнату :</label>
+        <div class="polya">
+            <button class="btn" id="room1">Workspace</button>
+            <button class="btn" id="room2">IventZone</button>
         </div>
-        <div class="kolonka">
-            <label>На сколько/час:</label>
             <div class="polya">
-                <button class='matem' type="button"
-                        onclick="document.getElementById('numberinput').stepDown()">-
-                </button>
-                <input type="number" id="numberinput" name="mynumber" value="1" min="0"
-                       max="10"
-                       step="1">
-                <button class='matem' type="button"
-                        onclick="document.getElementById('numberinput').stepUp()">+
-                </button>
-            </div>
+            <button class="btn" id="room3">BigMiting</button>
+            <button class="btn" id="room4">SmallMiting</button>
         </div>
-        <div class="kolonka">
-
-            <label for="start">Выберите дату :</label>
-            <div class="polya">
-                <input type="datetime-local" id="start" name="start">
-            </div>
+    </div>
+    <div class="kolonka">
+        <label>На сколько/час:</label>
+        <div class="polya">
+            <button class='matem' type="button"
+                    onclick="document.getElementById('numberinput').stepDown()">-
+            </button>
+            <input type="number" id="numberinput" name="mynumber" value="0" min="0"
+                   max="10"
+                   step="1">
+            <button class='matem' type="button"
+                    onclick="document.getElementById('numberinput').stepUp()">+
+            </button>
         </div>
+    </div>
+    <div class="kolonka">
+        <label for="start">Выберите дату :</label>
+        <div class="polya">
+            <input type="datetime-local" id="start" name="start">
+        </div>
+    </div>
 </div>
-
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="app.js"></script>
