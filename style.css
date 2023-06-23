@@ -1,0 +1,32 @@
+div.polya{
+    display:flex;
+    margin: 5px;
+}
+
+br {
+    display: block;
+}
+
+div.main-forma {
+    font-size: 25px;
+    align: center;
+    padding:3rem;
+}
+
+button {
+    margin: 5px;
+    color:white;
+    min-width:3rem;
+    padding:5px;
+    font-size:25px;
+    background-color: orange;
+    border:none !important;
+    border-radius: 5px;
+
+}
+
+input,select {
+    font-size:25px;
+    border-radius: 5px;
+    height: 3rem;
+}
