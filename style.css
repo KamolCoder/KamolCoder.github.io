@@ -8,11 +8,13 @@ br {
 }
 
 div.main-forma {
+    width: 100%;
     font-size: 25px;
-    align: center
+    align: center;
 }
 
 button {
+    height: 3rem;
     margin: 5px;
     color:white;
     min-width:3rem;
@@ -21,10 +23,12 @@ button {
     background-color: orange;
     border:none !important;
     border-radius: 5px;
+    width: 100%;
 
 }
 
 input,select {
+    width: 100%;
     font-size:25px;
     border-radius: 5px;
     height: 3rem;
