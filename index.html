@@ -10,35 +10,36 @@
 </head>
 <body style="">
 
-<div class="container-fluid" >
-    <h1 class="text-center mt-5">Ground-Zero Booking</h1>
-    <div class="d-grid justify-content-center">
+<div>
+    <h1>Ground-Zero Booking</h1>
+    <div>
         <form method="post">
             <label for="choose">Выберите комнату :</label>
-            <select class="form-control" id="choose" name="choose">
+            <select id="choose" name="choose">
                 <option value="Рабочая зона">Рабочая зона</option>
                 <option value="Ивент Зона">Ивент Зона</option>
                 <option value="Большой митинг рум">Большой митинг рум</option>
                 <option value="Малый митинг рум">Малый митинг рум</option>
             </select><br><br>
             <label>На сколько/час:</label>
-            <div class="input-group mb-5">
-                <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary" type="button"
+            <div>
+                <div>
+                    <button type="button"
                             onclick="document.getElementById('numberinput').stepDown()">-
                     </button>
                 </div>
-                <input type="number" class="form-control mx-3" id="numberinput" name="mynumber" value="0" min="0" max="10"
+                <input type="number" id="numberinput" name="mynumber" value="0" min="0"
+                       max="10"
                        step="1">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button"
+                <div>
+                    <button type="button"
                             onclick="document.getElementById('numberinput').stepUp()">+
                     </button>
                 </div>
             </div>
             <label for="start">Начало :</label>
-            <input class="form-control" type="datetime-local" id="start" name="start"><br><br>
-            <button class="btn btn-warning" style="width:100%" type="submit">Submit</button>
+            <input type="datetime-local" id="start" name="start"><br><br>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </div>
