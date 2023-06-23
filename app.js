@@ -62,7 +62,7 @@ plus.addEventListener('click', function(){
     tg.MainButton.show();
 
 })
-minus.addEventListener('click', function{
+minus.addEventListener('click', function(){
     hour -= 1
     tg.MainButton.show();
 
