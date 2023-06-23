@@ -61,6 +61,12 @@ div.polya{
     margin: 5px;
 }
 
+.btn {
+background : rgb(248,168,24) ;
+color: #fff;
+transition: background .2s linear
+}
+
 .btn:hover {
-    background:blue;
+    background:lightblue;
 }
