@@ -8,7 +8,7 @@ tg.MainButton.color = '#2cab37';
 let room = document.getElementById("choose").value;
 let hours = document.getElementById("numberinput").value;
 let datetime = document.getElementById("start").value;
-let data = (room+"_"+hours+"_"+datetime)
+let data = room + "_" + hours + "_" + datetime;
 
 tg.MainButton.show()
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
