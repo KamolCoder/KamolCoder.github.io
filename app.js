@@ -6,10 +6,14 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
 let room = "";
+let hour = "";
+
 let room1 = document.getElementById('room1');
 let room2 = document.getElementById('room2');
 let room3 = document.getElementById('room3');
 let room4 = document.getElementById('room4');
+let plus = document.getElementById('plus');
+let minus = document.getElementById('minus');
 
 room1.addEventListener('click', function(){
     if (tg.MainButton.isVisible) {
@@ -53,15 +57,15 @@ room4.addEventListener('click', function(){
 });
 
 
-let hour = "";
-let plus = document.getElementById('plus');
-let minus = document.getElementById('minus');
-
 plus.addEventListener('click', function(){
     hour += 1
+    tg.MainButton.show();
+
 })
 minus.addEventListener('click', function{
     hour -= 1
+    tg.MainButton.show();
+
 })
 
 
