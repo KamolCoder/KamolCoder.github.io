@@ -1,3 +1,8 @@
+body {
+    background-color: ;
+}
+
+
 div.polya{
     display:flex;
     margin: 5px;
@@ -17,7 +22,6 @@ button {
     height: 3rem;
     margin: 5px;
     color:white;
-    min-width:3rem;
     padding:5px;
     font-size:25px;
     background-color: orange;
@@ -26,10 +30,22 @@ button {
     width: 100%;
 
 }
+button.matem {
+    width: 5rem
+}
+
+div.kolonka {
+    margin-bottom: 2rem;
+    text-align: center;
+
+}
+
 
 input,select {
     width: 100%;
-    font-size:25px;
+    font-size:20px;
     border-radius: 5px;
     height: 3rem;
+    border: 1px solid orange;
+    text-align: center
 }
