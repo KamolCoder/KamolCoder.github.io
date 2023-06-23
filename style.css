@@ -1,12 +1,10 @@
 body {
-    background-color: ;
+    width: 95%;
+}
+img {
+    width: 100%;
 }
 
-
-div.polya{
-    display:flex;
-    margin: 5px;
-}
 
 br {
     display: block;
@@ -48,4 +46,9 @@ input,select {
     height: 3rem;
     border: 1px solid orange;
     text-align: center
+}
+
+div.polya{
+    display:flex;
+    margin: 5px;
 }
