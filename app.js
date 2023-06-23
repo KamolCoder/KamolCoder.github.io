@@ -21,7 +21,6 @@ room1.addEventListener('click', function(){
         tg.MainButton.show();
     }
 });
-
 room2.addEventListener('click', function(){
     if (tg.MainButton.isVisible) {
         tg.MainButton.hide();
@@ -53,6 +52,19 @@ room4.addEventListener('click', function(){
     }
 });
 
+
+let hour = "";
+let plus = document.getElementById('plus');
+let minus = document.getElementById('minus');
+
+plus.addEventListener('click', function(){
+    hour += 1
+})
+minus.addEventListener('click', function{
+    hour -= 1
+})
+
+
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
-    tg.sendData(room);
+    tg.sendData(room+"_"+hour);
 });
