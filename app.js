@@ -12,6 +12,6 @@ let datetime = document.getElementById("start").value;
 
 tg.MainButton.show()
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
-    tg.sendData(item);
+    tg.sendData(room,hours,datetime);
 });
 
