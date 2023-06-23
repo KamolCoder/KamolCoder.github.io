@@ -25,15 +25,9 @@
     <div class="kolonka">
         <label>На сколько/час:</label>
         <div class="polya">
-            <button class='matem' type="button"
-                    onclick="document.getElementById('numberinput').stepDown()">-
-            </button>
-            <input type="number" id="numberinput" name="mynumber" value="0" min="0"
-                   max="10"
-                   step="1">
-            <button class='matem' type="button"
-                    onclick="document.getElementById('numberinput').stepUp()">+
-            </button>
+            <button class='matem' id='minus' type="button" onclick="document.getElementById('numberinput').stepDown()">-</button>
+            <input type="number" id="numberinput" name="mynumber" value="0" min="0" max="10" step="1">
+            <button class='matem' id='plus' type="button" onclick="document.getElementById('numberinput').stepUp()">+</button>
         </div>
     </div>
     <div class="kolonka">
