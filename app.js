@@ -68,9 +68,38 @@ if (hour > 0 ){
     counter.innerHTML = hour;
 }}
 
-date = document.getElementById("start").value;
+        let datetime = document.getElementById("datetime");
 
+        function setDatetime() {
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
 
+            if (month < 10) {
+                month = "0" + month;
+            }
+
+            if (day < 10) {
+                day = "0" + day;
+            }
+
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+
+            datetime.value = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+        }
+
+        setDatetime();
+
+date = document.getElementById("datetime").value;
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
     tg.sendData(room+"_"+hour+"_"+date);
 });
