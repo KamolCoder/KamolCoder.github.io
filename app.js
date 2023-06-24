@@ -6,7 +6,7 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
 let room = "";
-let hour = 0;
+let hour = 1;
 
 let room1 = document.getElementById('room1');
 let room2 = document.getElementById('room2');
@@ -43,7 +43,7 @@ if (hour < 23 ){
 }}
 
 function decrement() {
-if (hour > 0 ){
+if (hour > 1 ){
     hour--;
     counter.innerHTML = hour;
 }}
@@ -59,12 +59,11 @@ if (localStorage.getItem("data")) {
     input.value = localStorage.getItem("data");
 }
 
-
+window.addEventListener("beforeunload", function() {
+    localStorage.removeItem("data");
+});
 
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
     tg.sendData(room+"_"+hour+"_"+input.value);
 });
 
-window.addEventListener("beforeunload", function() {
-    localStorage.removeItem("data");
-});
