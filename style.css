@@ -1,27 +1,15 @@
+container {
+    display: block;
+}
 body {
     margin:0;
     padding:0;
-    color:var(--tg-theme-text-color)
-    background:var(--tg-theme-bg-color)
-    width: 95%;
-}
-
-
-img {
-    width: 100%;
-}
-
-
-br {
-    display: block;
-}
-
-div.container {
-    max-width: 390px;
+    color:var(--tg-theme-text-color);
+    background-image: url("img.png");
 }
 
 button {
-    height: 3rem;
+    height: 4rem;
     margin: 5px;
     color:white;
     padding:5px;
@@ -30,15 +18,22 @@ button {
     border:none !important;
     border-radius: 5px;
     width: 80%;
+    opacity: 1;
 
 }
 button.matem {
-    width: 5rem
+    width: 1px;
+}
+
+div.items {
+    margin-bottom: 2rem;
+    text-align: center;
+
 }
 
 div.kolonka {
-    margin-bottom: 2rem;
     text-align: center;
+    margin-top: 4rem;
 
 }
 li.selected{
@@ -55,7 +50,10 @@ input,select {
     text-align: center;
 
 }
-
+label {
+    color:white;
+    font-size:20px;
+}
 div.polya{
     display:flex;
     margin: 5px;
@@ -66,6 +64,7 @@ background : rgb(248,168,24) ;
 color: #fff;
 transition: background .2s linear
 }
+
 
 .btn:hover {
     background:lightblue;
