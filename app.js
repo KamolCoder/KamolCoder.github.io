@@ -15,24 +15,16 @@ let room3 = document.getElementById('room3');
 let room4 = document.getElementById('room4');
 
 room1.addEventListener('click', function(){
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    }
-    else {
         tg.MainButton.setText("Выбрано комната - WorkSpace ");
         room = '1';
         tg.MainButton.show();
-    }
+    
 });
 room2.addEventListener('click', function(){
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    }
-    else {
         tg.MainButton.setText("Выбрано комната - IventZone ");
         room = '2';
         tg.MainButton.show();
-    }
+
 });
 room3.addEventListener('click', function(){
     if (tg.MainButton.isVisible) {
@@ -58,9 +50,11 @@ room4.addEventListener('click', function(){
 let counter = document.getElementById("counter");
 
 function increment() {
+if (hour < 23 ){
+
     hour++;
     counter.innerHTML = hour;
-}
+}}
 
 function decrement() {
 if (hour > 0 ){
@@ -68,36 +62,36 @@ if (hour > 0 ){
     counter.innerHTML = hour;
 }}
 
-        let datetime = document.getElementById("datetime");
+let datetime = document.getElementById("datetime");
 
-        function setDatetime() {
-            let date = new Date();
-            let year = date.getFullYear();
-            let month = date.getMonth() + 1;
-            let day = date.getDate();
-            let hours = date.getHours();
-            let minutes = date.getMinutes();
+function setDatetime() {
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
 
-            if (month < 10) {
-                month = "0" + month;
-            }
+    if (month < 10) {
+        month = "0" + month;
+    }
 
-            if (day < 10) {
-                day = "0" + day;
-            }
+    if (day < 10) {
+        day = "0" + day;
+    }
 
-            if (hours < 10) {
-                hours = "0" + hours;
-            }
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
 
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
 
-            datetime.value = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
-        }
+    datetime.value = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+}
 
-        setDatetime();
+setDatetime();
 
 date = document.getElementById("datetime").value;
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
