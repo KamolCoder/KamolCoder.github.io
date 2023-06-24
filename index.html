@@ -25,9 +25,9 @@
     <div class="kolonka">
         <label>На сколько/час:</label>
         <div class="polya">
-            <button class="btn" id="hourminus">-</button>
-            <h5 style="margin:0;padding-left:5rem;padding-right:5rem;font-size:3rem" id="myHeading"></h5>
-            <button class="btn" id="hourplus">+</button>
+            <button class="btn" onclick="decrement()">-</button>
+            <h5 style="margin:0;padding-left:5rem;padding-right:5rem;font-size:3rem" id="counter">0</h5>
+            <button class="btn" onclick="increment()">+</button>
         </div>
     </div>
     <div class="kolonka">
@@ -37,6 +37,7 @@
         </div>
     </div>
 </div>
+
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="app.js"></script>
