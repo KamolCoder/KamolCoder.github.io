@@ -14,22 +14,22 @@ let room3 = document.getElementById('room3');
 let room4 = document.getElementById('room4');
 
 room1.addEventListener('click', function(){
-        tg.MainButton.setText("Выбрано комната - WorkSpace ");
+        tg.MainButton.setText("Choosed room - Workspace ");
         room = '1';
         tg.MainButton.show();
 });
 room2.addEventListener('click', function(){
-        tg.MainButton.setText("Выбрано комната - IventZone ");
+        tg.MainButton.setText("Choosed room - Ivent Zone ");
         room = '2';
         tg.MainButton.show();
 });
 room3.addEventListener('click', function(){
-        tg.MainButton.setText("Выбрано комната - BigMiting ");
+        tg.MainButton.setText("Choosed room - Big Miting ");
         room = '3';
         tg.MainButton.show();
 });
 room4.addEventListener('click', function(){
-        tg.MainButton.setText("Выбрано комната - SmallMiting ");
+        tg.MainButton.setText("Choosed room - Small Miting ");
         room = '4';
         tg.MainButton.show();
 });
