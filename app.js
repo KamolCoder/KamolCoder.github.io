@@ -18,7 +18,7 @@ room1.addEventListener('click', function(){
         tg.MainButton.setText("Выбрано комната - WorkSpace ");
         room = '1';
         tg.MainButton.show();
-    
+
 });
 room2.addEventListener('click', function(){
         tg.MainButton.setText("Выбрано комната - IventZone ");
@@ -27,24 +27,18 @@ room2.addEventListener('click', function(){
 
 });
 room3.addEventListener('click', function(){
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    }
-    else {
+
         tg.MainButton.setText("Выбрано комната - BigMiting ");
         room = '3';
         tg.MainButton.show();
-    }
+
 });
 room4.addEventListener('click', function(){
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    }
-    else {
+
         tg.MainButton.setText("Выбрано комната - SmallMiting ");
         room = '4';
         tg.MainButton.show();
-    }
+
 });
 
 let counter = document.getElementById("counter");
