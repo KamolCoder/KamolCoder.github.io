@@ -61,7 +61,10 @@ if (localStorage.getItem("data")) {
 
 
 
-
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
     tg.sendData(room+"_"+hour+"_"+input.value);
+});
+
+window.addEventListener("beforeunload", function() {
+    localStorage.removeItem("data");
 });
