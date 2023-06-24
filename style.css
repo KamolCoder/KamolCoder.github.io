@@ -9,7 +9,7 @@ body {
 }
 
 button {
-    height: 4rem;
+    height: 3rem;
     margin: 5px;
     color:white;
     padding:5px;
@@ -33,7 +33,7 @@ div.items {
 
 div.kolonka {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 1rem;
 
 }
 li.selected{
