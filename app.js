@@ -7,7 +7,6 @@ tg.MainButton.color = '#2cab37';
 
 let room = "";
 let hour = 0;
-let date = "";
 
 let room1 = document.getElementById('room1');
 let room2 = document.getElementById('room2');
@@ -39,7 +38,6 @@ let counter = document.getElementById("counter");
 
 function increment() {
 if (hour < 23 ){
-
     hour++;
     counter.innerHTML = hour;
 }}
@@ -50,38 +48,17 @@ if (hour > 0 ){
     counter.innerHTML = hour;
 }}
 
-let datetime = document.getElementById("datetime");
 
-function setDatetime() {
-    let date = new Date();
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
+let input = document.getElementById("datetime");
 
-    if (month < 10) {
-        month = "0" + month;
-    }
-
-    if (day < 10) {
-        day = "0" + day;
-    }
-
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-
-    datetime.value = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+function getData() {
+    let ordertime = input.value;
+    alert(ordertime);
 }
 
-setDatetime();
 
-date = document.getElementById("datetime").value;
+
+
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
-    tg.sendData(room+"_"+hour+"_"+date);
+    tg.sendData(room+"_"+hour+"_"+ordertime);
 });
