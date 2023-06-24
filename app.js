@@ -49,15 +49,19 @@ if (hour > 0 ){
 }}
 
 
-let input = document.getElementById("datetime");
+let input = document.getElementById("input");
 
-function getData() {
-    let ordertime = input.value;
+input.addEventListener("input", function() {
+    localStorage.setItem("data", input.value);
+});
+
+if (localStorage.getItem("data")) {
+    input.value = localStorage.getItem("data");
 }
 
 
 
 
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
-    tg.sendData(room+"_"+hour+"_"+ordertime);
+    tg.sendData(room+"_"+hour+"_"+input.value);
 });
