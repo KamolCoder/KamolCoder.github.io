@@ -7,6 +7,7 @@ tg.MainButton.color = '#2cab37';
 
 let room = "";
 let hour = 0;
+let date = "";
 
 let room1 = document.getElementById('room1');
 let room2 = document.getElementById('room2');
@@ -67,7 +68,7 @@ if (hour > 0 ){
     counter.innerHTML = hour;
 }}
 
-let date = document.getElementById("start").value;
+date = document.getElementById("start").value;
 
 
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
