@@ -67,10 +67,9 @@ if (hour > 0 ){
     counter.innerHTML = hour;
 }}
 
-
-
+let date = document.getElementById("start").value;
 
 
 Telegram.WebApp.onEvent('mainButtonClicked',function(){
-    tg.sendData(room+"_"+hour);
+    tg.sendData(room+"_"+hour+"_"+date);
 });
