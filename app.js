@@ -53,7 +53,6 @@ let input = document.getElementById("datetime");
 
 function getData() {
     let ordertime = input.value;
-    alert(ordertime);
 }
 
 
