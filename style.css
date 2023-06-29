@@ -4,8 +4,13 @@ container {
 body {
     margin:0;
     padding:0;
-    color:var(--tg-theme-text-color);
-    background-image: url("img.png");
+    background-image: url("New Project (1).jpg");
+    background-size: 1240px 1240px;
+    background-position-x: 50% ;
+    background-position-y: 20% ;
+
+    background-repeat: no-repeat;
+
 }
 
 button {
@@ -60,12 +65,12 @@ div.polya{
 }
 
 .btn {
-background : rgb(248,168,24) ;
+background : #111180 ;
 color: #fff;
 transition: background .2s linear
 }
 
 
 .btn:hover {
-    background:lightblue;
+    background:rgb(248,168,24);
 }
