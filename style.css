@@ -30,6 +30,11 @@ button.matem {
     width: 1px;
 }
 
+div.kolonka-filial {
+    margin-top:20px;
+    text-align:center;
+}
+
 div.items {
     margin-bottom: 2rem;
     text-align: center;
@@ -64,13 +69,11 @@ div.polya{
     margin: 5px;
 }
 
+h3 {
+    color:white;
+}
 .btn {
 background : #111180 ;
 color: #fff;
 transition: background .2s linear
-}
-
-
-.btn:hover {
-    background:rgb(248,168,24);
 }
