@@ -20,21 +20,21 @@ let filial3 = document.getElementById('f3');
 let filial4 = document.getElementById('f4');
 
 filial1.addEventListener('click', function(){
-        filial = 'Kitoblar Olami';
+        filial = '4';
         filial1.style.backgroundColor = 'rgb(248,168,24)';
         filial2.style.backgroundColor = '#111180';
         filial3.style.backgroundColor = '#111180';
 });
 
 filial2.addEventListener('click', function(){
-        filial = 'Minor';
+        filial = '5';
         filial2.style.backgroundColor = 'rgb(248,168,24)';
         filial1.style.backgroundColor = '#111180';
         filial3.style.backgroundColor = '#111180';
 });
 
 filial3.addEventListener('click', function(){
-        filial = 'Sharq';
+        filial = '3';
         filial3.style.backgroundColor = 'rgb(248,168,24)';
         filial2.style.backgroundColor = '#111180';
         filial1.style.backgroundColor = '#111180';
@@ -42,7 +42,7 @@ filial3.addEventListener('click', function(){
 
 room1.addEventListener('click', function(){
         tg.MainButton.setText("Выбрано комната - WorkSpace ");
-        room = 'Рабочая зона';
+        room = '1';
         room1.style.backgroundColor = 'rgb(248,168,24)';
         room2.style.backgroundColor = '#111180';
         room3.style.backgroundColor = '#111180';
@@ -51,7 +51,7 @@ room1.addEventListener('click', function(){
 });
 room2.addEventListener('click', function(){
         tg.MainButton.setText("Выбрано комната - IventZone ");
-        room = 'Ивент Зона';
+        room = '2';
         room1.style.backgroundColor = '#111180';
         room2.style.backgroundColor = 'rgb(248,168,24)';
         room3.style.backgroundColor = '#111180';
@@ -60,7 +60,7 @@ room2.addEventListener('click', function(){
 });
 room3.addEventListener('click', function(){
         tg.MainButton.setText("Выбрано комната - BigMiting ");
-        room = 'Большой митинг рум';
+        room = '3';
         room1.style.backgroundColor = '#111180';
         room2.style.backgroundColor = '#111180';
         room3.style.backgroundColor = 'rgb(248,168,24)';
@@ -69,7 +69,7 @@ room3.addEventListener('click', function(){
 });
 room4.addEventListener('click', function(){
         tg.MainButton.setText("Выбрано комната - SmallMiting ");
-        room = 'Малый митинг рум';
+        room = '4';
         room1.style.backgroundColor = '#111180';
         room2.style.backgroundColor = '#111180';
         room3.style.backgroundColor = '#111180';
