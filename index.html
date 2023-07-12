@@ -10,9 +10,19 @@
 </head>
 <body>
 <div class="container">
-    <h2 style="margin-top:20%;margin-bottom:10%;font-family:helvetica,sans-serif;color:white;text-align:center">Please, select options... </h2>
+    <div class="kolonka-filial">
+        <h3>Filial :</h3>
+        <div class="polya">
+            <button class="btn" id="f1">Kitoblar Olami</button>
+            <button class="btn" id="f2">Minor</button>
+        </div>
+        <div class="polya">
+            <button class="btn" id="f3">Sharq</button>
+            <button class="btn" id="f4"></button>
+        </div>
+    </div>
     <div class="kolonka">
-        <label>Rooms :</label>
+        <h3>Rooms :</h3>
         <div class="polya">
             <button class="btn" id="room1">Workspace</button>
             <button class="btn" id="room2">Ivent Zone</button>
@@ -22,9 +32,8 @@
             <button class="btn" id="room4">Small Miting</button>
         </div>
     </div>
-
     <div class="kolonka">
-        <label>Duration/hour:</label>
+        <h3>Duration/hour:</h3>
         <div class="polya">
             <button class="btn" onclick="decrement()">-</button>
             <h5 style="margin:0;padding-left:5rem;padding-right:5rem;font-size:3rem;color:white" id="counter">1</h5>
@@ -32,7 +41,7 @@
         </div>
     </div>
     <div class="kolonka">
-        <label for="input">Booking date / start :</label>
+        <h3 >Booking date / start :</h3>
         <div class="polya">
             <input type="datetime-local" id="input" name="datetime">
         </div>
