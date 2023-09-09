@@ -41,7 +41,7 @@ filial3.addEventListener('click', function(){
 });
 
 room1.addEventListener('click', function(){
-        tg.MainButton.setText("Выбрано комната - WorkSpace ");
+        tg.MainButton.setText("Выбрано комната - Open Space ");
         room = '1';
         room1.style.backgroundColor = 'rgb(248,168,24)';
         room2.style.backgroundColor = '#111180';
@@ -50,7 +50,7 @@ room1.addEventListener('click', function(){
         tg.MainButton.show();
 });
 room2.addEventListener('click', function(){
-        tg.MainButton.setText("Выбрано комната - IventZone ");
+        tg.MainButton.setText("Выбрано комната - Event-Zone ");
         room = '2';
         room1.style.backgroundColor = '#111180';
         room2.style.backgroundColor = 'rgb(248,168,24)';
