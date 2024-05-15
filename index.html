@@ -19,7 +19,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     text-align: center;
-    background: rgb(0 0 0 / 66%);
+    background: rgb(128 0 0 / 66%);
 }
 .container {
     width: 100%;
@@ -101,36 +101,35 @@ video {
 
 <script>
     let tg = window.Telegram.WebApp;
-tg.expand()
+    tg.expand()
 
 function domReady(fn) {
-    if (
-        document.readyState === "complete" ||
-        document.readyState === "interactive"
-    ) {
-        setTimeout(fn, 1000);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
-    }
+if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+) {
+    setTimeout(fn, 1000);
+} else {
+    document.addEventListener("DOMContentLoaded", fn);
+}
 }
 
-domReady(function() {
+domReady(function () {
 
-    // If found you qr code
-    function onScanSuccess(decodeText, decodeResult) {
-        tg.sendData(decodeText, decodeResult);
-    }
+// If found you qr code
+function onScanSuccess(decodeText, decodeResult) {
+    tg.sendData("You Qr is : " + decodeText, decodeResult);
+}
 
-    let htmlscanner = new Html5QrcodeScanner(
-        "my-qr-reader", {
- fps: 10,
- qrbox: 250,
- rememberLastUsedCamera: true,
- aspectRatio: 1.7777778
- });
-    htmlscanner.render(onScanSuccess);
+let htmlscanner = new Html5QrcodeScanner(
+    "my-qr-reader",
+    { fps: 10, qrbos: 250 }
+);
+htmlscanner.render(onScanSuccess);
 });
+
 </script>
+
 </body>
 
 </html>
