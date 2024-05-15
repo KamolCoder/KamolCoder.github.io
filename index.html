@@ -116,7 +116,7 @@ domReady(function () {
 
 // If found you qr code
 function onScanSuccess(decodeText, decodeResult) {
-    tg.sendData("You Qr is : " + decodeText, decodeResult);
+    tg.sendData(decodeText, decodeResult);
     htmlscanner.clear();
 }
 
