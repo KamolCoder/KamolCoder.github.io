@@ -87,7 +87,7 @@ video {
 
 <body>
 <div class="container">
-    <h1>Scan QR Codes</h1>
+    <h3>Отсканируйте QR-код</h3>
     <div class="section">
         <div id="my-qr-reader">
         </div>
@@ -97,37 +97,20 @@ video {
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <script>
-    let tg = window.Telegram.WebApp;
+        let tg = window.Telegram.WebApp;
     tg.expand()
 
-function domReady(fn) {
-if (
-    document.readyState === "complete" ||
-    document.readyState === "interactive"
-) {
-    setTimeout(fn, 1000);
-} else {
-    document.addEventListener("DOMContentLoaded", fn);
-}
-}
+    const html5QrCode = new Html5Qrcode("my-qr-reader");
+const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+        tg.sendData(decodedText, decodedResult);
 
-domReady(function () {
+};
+const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
-// If found you qr code
-function onScanSuccess(decodeText, decodeResult) {
-    tg.sendData(decodeText, decodeResult);
-    htmlscanner.clear();
-}
-
-let htmlscanner = new Html5QrcodeScanner(
-    "my-qr-reader",
-    { fps: 10, qrbox: 250 }
-);
-htmlscanner.render(onScanSuccess);
-});
+// If you want to prefer back camera
+html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 
 </script>
-
 </body>
 
 </html>
