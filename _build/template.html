@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{meta.title}}</title>
+  <meta name="description" content="{{meta.description}}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="{{url}}">
+  <link rel="alternate" hreflang="ru" href="{{site}}/">
+  <link rel="alternate" hreflang="uz" href="{{site}}/uz/">
+  <link rel="alternate" hreflang="x-default" href="{{site}}/">
+  <meta name="theme-color" content="#08090d">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="kamol.dev">
+  <meta property="og:locale" content="{{ogLocale}}">
+  <meta property="og:locale:alternate" content="{{ogLocaleAlt}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:title" content="{{meta.ogTitle}}">
+  <meta property="og:description" content="{{meta.description}}">
+  <meta property="og:image" content="{{site}}/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2308090d'/%3E%3Cpath d='M20 16v32M20 32l16-16M26 27l14 21' stroke='%237cf5c6' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+{{preload}}
+  <link rel="stylesheet" href="{{base}}assets/css/style.css">
+  <script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__grid"></div>
+    <div class="bg__blob bg__blob--a"></div>
+    <div class="bg__blob bg__blob--b"></div>
+    <div class="bg__blob bg__blob--c"></div>
+    <canvas class="bg__canvas" id="particles"></canvas>
+  </div>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" aria-label="Kamol">
+        <span class="logo__mark">K</span><span class="logo__text">kamol<span class="accent">.</span>dev</span>
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#cases" data-i18n="nav.cases">Проекты</a>
+        <a href="#about" data-i18n="nav.about">Обо мне</a>
+        <a href="#process" data-i18n="nav.process">Процесс</a>
+        <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="Language" data-active="{{lang}}">
+          <a class="lang__btn{{ruActive}}" href="{{base}}./" hreflang="ru" lang="ru">RU</a>
+          <a class="lang__btn{{uzActive}}" href="{{base}}uz/" hreflang="uz" lang="uz">UZ</a>
+          <span class="lang__pill" aria-hidden="true"></span>
+        </div>
+        <a href="#contact" class="btn btn--sm btn--primary magnetic nav__cta" data-i18n="nav.cta">Обсудить проект</a>
+        <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <div class="badge reveal"><span class="badge__dot"></span><span data-i18n="hero.badge">Открыт к новым проектам</span></div>
+          <h1 class="hero__title reveal">
+            <span data-i18n="hero.title1">Создаю продукты</span><br>
+            <span data-i18n="hero.title2">для бизнеса&nbsp;—</span><br>
+            <span class="hero__rotator"><span class="gradient-text" id="rotator">{{rotator0}}</span><span class="caret"></span></span>
+          </h1>
+          <p class="hero__lead reveal" data-i18n="hero.lead">Веб-сервисы, мобильные и десктоп-приложения под ключ — от идеи до релиза. Интегрирую с 1С, Telegram, кассами и платёжными системами, потому что сам работаю в бизнесе и знаю, где теряются деньги и время.</p>
+          <div class="hero__cta reveal">
+            <a href="#contact" class="btn btn--primary magnetic"><span data-i18n="hero.cta1">Обсудить проект</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#cases" class="btn btn--ghost magnetic" data-i18n="hero.cta2">Смотреть проекты</a>
+          </div>
+          <dl class="stats reveal">
+            <div class="stat"><dt><span class="counter" data-to="10">0</span>+</dt><dd data-i18n="stats.projects">проектов в продакшене</dd></div>
+            <div class="stat"><dt><span class="counter" data-to="3">0</span></dt><dd data-i18n="stats.platforms">платформы: web, mobile, desktop</dd></div>
+            <div class="stat"><dt>~<span class="counter" data-to="30">0</span></dt><dd data-i18n="stats.branches">филиалов работают на моих системах</dd></div>
+          </dl>
+        </div>
+
+        <!-- Morphing device -->
+        <div class="stage reveal" aria-label="Web, mobile and desktop demo">
+          <div class="stage__glow"></div>
+          <div class="device is-web" id="device">
+            <div class="device__chrome">
+              <div class="chrome chrome--web">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="url"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>timkon.uz/dashboard</span>
+              </div>
+              <div class="chrome chrome--mobile">
+                <span>9:41</span><span class="notch"></span><span class="sig"><i></i><i></i><i></i></span>
+              </div>
+              <div class="chrome chrome--desktop">
+                <span class="app-ico">T</span><span>Timkon Desktop</span>
+                <span class="win"><i>&#8212;</i><i>&#9633;</i><i>&#10005;</i></span>
+              </div>
+            </div>
+            <div class="screen">
+              <aside class="screen__side">
+                <span class="side-logo"></span>
+                <i class="is-on"></i><i></i><i></i><i></i><i></i>
+              </aside>
+              <div class="screen__main">
+                <div class="screen__head">
+                  <div>
+                    <small data-i18n="demo.hello">Добрый день</small>
+                    <b data-i18n="demo.title">Сводка по сети</b>
+                  </div>
+                  <span class="avatar">A</span>
+                </div>
+                <div class="kpis">
+                  <div class="kpi"><small data-i18n="demo.k1">Выручка</small><b><span class="live" data-base="128.4" data-step="0.3">128.4</span>M</b><em>+12%</em></div>
+                  <div class="kpi"><small data-i18n="demo.k2">Чеки</small><b class="live" data-base="4812" data-step="7" data-int="1">4812</b><em>+8%</em></div>
+                  <div class="kpi kpi--extra"><small data-i18n="demo.k3">На смене</small><b>87/92</b><em class="ok">95%</em></div>
+                </div>
+                <div class="chart">
+                  <div class="chart__bars"><i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:36%"></i><i style="--h:72%"></i><i style="--h:64%"></i><i style="--h:88%"></i><i style="--h:70%"></i><i style="--h:94%"></i><i style="--h:61%"></i><i style="--h:79%"></i></div>
+                  <svg class="chart__line" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0 30 L11 24 L22 28 L33 15 L44 19 L55 8 L66 14 L77 4 L88 12 L100 6"/></svg>
+                </div>
+                <ul class="rows">
+                  <li><span class="dot dot--g"></span><span data-i18n="demo.r1">Синхронизация с 1С</span><b>OK</b></li>
+                  <li><span class="dot dot--y"></span><span data-i18n="demo.r2">Сроки годности</span><b>12</b></li>
+                  <li><span class="dot dot--v"></span><span data-i18n="demo.r3">Новые заказы</span><b>34</b></li>
+                </ul>
+              </div>
+            </div>
+            <div class="device__home"></div>
+          </div>
+          <div class="stage__tabs" role="tablist">
+            <button type="button" class="stage__tab is-active" data-mode="web" role="tab">Web</button>
+            <button type="button" class="stage__tab" data-mode="mobile" role="tab">Mobile</button>
+            <button type="button" class="stage__tab" data-mode="desktop" role="tab">Desktop</button>
+            <span class="stage__ind" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+      <a href="#services" class="scroll-hint" aria-label="Scroll"><span></span></a>
+    </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Django</span><span>FastAPI</span><span>Flutter</span><span>FlutterFlow</span><span>PySide6</span><span>1С OData</span><span>Frontol</span><span>PostgreSQL</span><span>SQLite</span><span>Firebase</span><span>Docker</span><span>Telegram Bot API</span><span>Payme</span><span>Click</span><span>Wagtail</span>
+        <span>Django</span><span>FastAPI</span><span>Flutter</span><span>FlutterFlow</span><span>PySide6</span><span>1С OData</span><span>Frontol</span><span>PostgreSQL</span><span>SQLite</span><span>Firebase</span><span>Docker</span><span>Telegram Bot API</span><span>Payme</span><span>Click</span><span>Wagtail</span>
+      </div>
+    </div>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">01 — <span data-i18n="services.eyebrow">Услуги</span></span>
+          <h2 class="section__title" data-i18n="services.title">Одна команда в одном лице — для всех платформ</h2>
+          <p class="section__lead" data-i18n="services.lead">Бэкенд, мобильное приложение и десктоп-программа говорят на одном языке и делаются одним человеком: без потерь на стыках между подрядчиками.</p>
+        </div>
+
+        <div class="services">
+          <article class="svc glow-card reveal" data-tilt>
+            <div class="svc__art svc__art--web"><span class="mini-browser"><i></i><b></b><b></b><b></b></span></div>
+            <span class="svc__num">Web</span>
+            <h3 data-i18n="svc.web.title">Веб-сервисы и сайты</h3>
+            <p data-i18n="svc.web.text">Личные кабинеты, CRM, админ-панели, REST API, корпоративные сайты с CMS и многоязычием.</p>
+            <ul class="chips"><li>Django</li><li>FastAPI</li><li>DRF</li><li>Wagtail</li><li>PostgreSQL</li></ul>
+          </article>
+          <article class="svc glow-card reveal" data-tilt>
+            <div class="svc__art svc__art--mobile"><span class="mini-phone"><b></b><b></b><b></b></span></div>
+            <span class="svc__num">Mobile</span>
+            <h3 data-i18n="svc.mobile.title">Мобильные приложения</h3>
+            <p data-i18n="svc.mobile.text">iOS и Android из одной кодовой базы: доставка, онлайн-оплата, push-уведомления, работа без интернета, сканеры штрихкодов.</p>
+            <ul class="chips"><li>Flutter</li><li>FlutterFlow</li><li>Bloc</li><li>Firebase</li><li>FCM</li></ul>
+          </article>
+          <article class="svc glow-card reveal" data-tilt>
+            <div class="svc__art svc__art--desktop"><span class="mini-window"><i></i><b></b><b></b></span></div>
+            <span class="svc__num">Desktop</span>
+            <h3 data-i18n="svc.desktop.title">Десктоп-программы</h3>
+            <p data-i18n="svc.desktop.text">Программы для Windows: рабочие места сотрудников, фоновые сервисы в трее, синхронизация по расписанию, автообновление.</p>
+            <ul class="chips"><li>Python</li><li>PySide6</li><li>SQLite</li><li>PyInstaller</li></ul>
+          </article>
+          <article class="svc svc--wide glow-card reveal">
+            <div class="svc__wide-text">
+              <span class="svc__num" data-i18n="svc.int.tag">Мой козырь</span>
+              <h3 data-i18n="svc.int.title">Интеграции и автоматизация</h3>
+              <p data-i18n="svc.int.text">Связываю всё со всем: 1С ⇄ сайт ⇄ приложение ⇄ касса ⇄ Telegram. Реальные остатки, продажи и документы — без ручного переноса и Excel.</p>
+            </div>
+            <div class="flow" aria-hidden="true">
+              <span class="flow__node">1С</span>
+              <span class="flow__line"><i></i></span>
+              <span class="flow__node flow__node--core">API</span>
+              <span class="flow__line"><i></i></span>
+              <span class="flow__stack">
+                <span class="flow__node">App</span>
+                <span class="flow__node">Web</span>
+                <span class="flow__node">Bot</span>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CASES ========== -->
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">02 — <span data-i18n="cases.eyebrow">Проекты</span></span>
+          <h2 class="section__title" data-i18n="cases.title">Что уже работает у клиентов</h2>
+        </div>
+
+        <!-- Flagship -->
+        <article class="flagship glow-card reveal" data-case="timkon" data-platforms="web mobile desktop">
+          <div class="flagship__text">
+            <div class="flagship__top">
+              <span class="tag tag--hot" data-i18n="cases.flag">Флагман</span>
+              <a class="ext" href="https://timkon.uz" target="_blank" rel="noopener">timkon.uz ↗</a>
+            </div>
+            <h3 class="flagship__title">Timkon</h3>
+            <p class="flagship__lead" data-i18n="timkon.lead">SaaS-платформа для розничных сетей: сотрудники, смены, задачи, остатки и сроки годности — в одном сервисе вместо пяти.</p>
+            <ul class="eco">
+              <li><span class="pf pf--mobile">Mobile</span><span data-i18n="timkon.e1">Приложение для сотрудников: приход/уход, графики, задачи, KPI, рейтинг</span></li>
+              <li><span class="pf pf--web">Web</span><span data-i18n="timkon.e2">Бэкенд и админка с изоляцией данных организаций, лендинг с калькулятором</span></li>
+              <li><span class="pf pf--desktop">Desktop</span><span data-i18n="timkon.e3">Рабочее место офиса: заказы, ОКС, графики, автообновление</span></li>
+              <li><span class="pf pf--desktop">Desktop</span><span data-i18n="timkon.e4">Фоновая синхронизация 1С ⇄ Timkon в трее Windows</span></li>
+              <li><span class="pf pf--web">API</span><span data-i18n="timkon.e5">Сервис реальных остатков: 1С минус непроведённые продажи кассы</span></li>
+              <li><span class="pf pf--mobile" data-i18n="pf.tsd">ТСД</span><span data-i18n="timkon.e6">Проверка перемещений сканером, офлайн, запись в 1С</span></li>
+            </ul>
+            <button type="button" class="btn btn--ghost btn--sm open-case" data-case="timkon" data-i18n="cases.more">Подробнее</button>
+            {{case:timkon}}
+          </div>
+          <div class="flagship__phones">
+            <div class="phone phone--back"><img src="{{base}}assets/img/timkon/stock.webp" alt="{{alt.stock}}" loading="lazy" width="600" height="1304"></div>
+            <div class="phone phone--front">
+              <div class="phone__slides" id="timkonSlides">
+                <img src="{{base}}assets/img/timkon/main.webp" alt="{{alt.main}}" class="is-on" width="600" height="1304">
+                <img src="{{base}}assets/img/timkon/tasks.webp" alt="{{alt.tasks}}" loading="lazy" width="600" height="1304">
+                <img src="{{base}}assets/img/timkon/expiry.webp" alt="{{alt.expiry}}" loading="lazy" width="600" height="1304">
+                <img src="{{base}}assets/img/timkon/rating.webp" alt="{{alt.rating}}" loading="lazy" width="600" height="1304">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="filters reveal" role="tablist">
+          <button type="button" class="filter is-active" data-filter="all" data-i18n="filter.all">Все</button>
+          <button type="button" class="filter" data-filter="web">Web</button>
+          <button type="button" class="filter" data-filter="mobile">Mobile</button>
+          <button type="button" class="filter" data-filter="desktop">Desktop</button>
+          <button type="button" class="filter" data-filter="bot" data-i18n="filter.bot">Боты</button>
+        </div>
+
+        <div class="cases">
+          <article class="case glow-card reveal" data-platforms="mobile web" data-case="delivery" data-tilt>
+            <div class="case__art case__art--delivery"><span class="ico">🛵</span></div>
+            <div class="case__tags"><span class="pf pf--mobile">Mobile</span><span class="pf pf--web">Web</span></div>
+            <h3 data-i18n="case.delivery.title">Приложение доставки для сети зоомагазинов</h3>
+            <p data-i18n="case.delivery.text">Каталог, доставка из ближайшего филиала, оплата Payme/Click, вход по SMS, push-уведомления и веб-панель сборщика.</p>
+            <button type="button" class="case__more open-case" data-case="delivery"><span data-i18n="cases.more">Подробнее</span> →</button>
+            {{case:delivery}}
+          </article>
+          <article class="case glow-card reveal" data-platforms="web" data-case="corpsite" data-tilt>
+            <div class="case__art case__art--site"><span class="ico">🌐</span></div>
+            <div class="case__tags"><span class="pf pf--web">Web</span></div>
+            <h3 data-i18n="case.corpsite.title">Корпоративный сайт розничной сети</h3>
+            <p data-i18n="case.corpsite.text">RU / UZ / EN, CMS для маркетинга, карта магазинов с поиском «рядом со мной», акции, вакансии с откликом и заявки партнёров.</p>
+            <button type="button" class="case__more open-case" data-case="corpsite"><span data-i18n="cases.more">Подробнее</span> →</button>
+            {{case:corpsite}}
+          </article>
+          <article class="case glow-card reveal" data-platforms="mobile" data-case="car" data-tilt>
+            <div class="case__art case__art--car"><span class="ico">🚗</span></div>
+            <div class="case__tags"><span class="pf pf--mobile">Android</span></div>
+            <h3>Car Launcher</h3>
+            <p data-i18n="case.car.text">Лаунчер для планшета в автомобиле: музыка, скорость по GPS, навигатор в split-screen, автозапуск при включении зажигания.</p>
+            <button type="button" class="case__more open-case" data-case="car"><span data-i18n="cases.more">Подробнее</span> →</button>
+            {{case:car}}
+          </article>
+          <article class="case glow-card reveal" data-platforms="desktop" data-case="finance" data-tilt>
+            <div class="case__art case__art--finance"><span class="ico">📊</span></div>
+            <div class="case__tags"><span class="pf pf--desktop">Desktop</span><span class="pf pf--web">1С</span></div>
+            <h3 data-i18n="case.finance.title">Автоматизация финансового учёта в 1С</h3>
+            <p data-i18n="case.finance.text">Банковские выписки, себестоимость, зарплата, аренда и сверки загружаются в управленческую 1С автоматически, а не руками.</p>
+            <button type="button" class="case__more open-case" data-case="finance"><span data-i18n="cases.more">Подробнее</span> →</button>
+            {{case:finance}}
+          </article>
+          <article class="case glow-card reveal" data-platforms="web" data-case="crm" data-tilt>
+            <div class="case__art case__art--crm"><span class="ico">🗂️</span></div>
+            <div class="case__tags"><span class="pf pf--web">Web</span></div>
+            <h3 data-i18n="case.crm.title">CRM для сети с филиалами</h3>
+            <p data-i18n="case.crm.text">Компании, филиалы, помещения и прайс-листы в одной системе на Django с ролями и отчётами.</p>
+            <button type="button" class="case__more open-case" data-case="crm"><span data-i18n="cases.more">Подробнее</span> →</button>
+            {{case:crm}}
+          </article>
+          <article class="case glow-card reveal" data-platforms="bot" data-case="loyalty" data-tilt>
+            <div class="case__art case__art--bot"><span class="ico">☕</span></div>
+            <div class="case__tags"><span class="pf pf--bot">Telegram</span></div>
+            <h3 data-i18n="case.loyalty.title">Бот лояльности для кофейни</h3>
+            <p data-i18n="case.loyalty.text">Гость сканирует QR с чека — бот считает покупки и выдаёт бесплатный кофе. Без пластиковых карт и печатей.</p>
+            <button type="button" class="case__more open-case" data-case="loyalty"><span data-i18n="cases.more">Подробнее</span> →</button>
+            {{case:loyalty}}
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__text reveal">
+          <span class="eyebrow">03 — <span data-i18n="about.eyebrow">Обо мне</span></span>
+          <h2 class="section__title" data-i18n="about.title">Разработчик, который понимает бизнес изнутри</h2>
+          <p data-i18n="about.p1">Меня зовут Камол, я из Ташкента. Днём — финансовый аналитик сети из ~30 зоомагазинов, параллельно разрабатываю собственные продукты и веду импортный бизнес.</p>
+          <p data-i18n="about.p2">Поэтому я начинаю не с кода, а с вопроса «где бизнес теряет деньги и время?». Считаю эффект в цифрах, автоматизирую то, что реально окупится, и говорю с вами на языке выручки, а не фреймворков.</p>
+        </div>
+        <div class="about__cards">
+          <div class="pill-card glow-card reveal"><b>💼</b><div><h4 data-i18n="about.c1t">Финансы + код</h4><p data-i18n="about.c1">Знаю 1С, учёт, себестоимость и отчётность — не нужно объяснять базовое.</p></div></div>
+          <div class="pill-card glow-card reveal"><b>⚡</b><div><h4 data-i18n="about.c2t">Полный цикл</h4><p data-i18n="about.c2">Бэкенд, мобайл, десктоп, сервер и деплой — один ответственный.</p></div></div>
+          <div class="pill-card glow-card reveal"><b>🔒</b><div><h4 data-i18n="about.c3t">Надёжность</h4><p data-i18n="about.c3">Бэкапы, мониторинг, изоляция данных, тесты на критичных местах.</p></div></div>
+          <div class="pill-card glow-card reveal"><b>🇺🇿</b><div><h4 data-i18n="about.c4t">Локальный контекст</h4><p data-i18n="about.c4">Payme, Click, Eskiz, Яндекс Доставка, узбекский язык в интерфейсе.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROCESS ========== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">04 — <span data-i18n="process.eyebrow">Процесс</span></span>
+          <h2 class="section__title" data-i18n="process.title">Как мы будем работать</h2>
+        </div>
+        <ol class="timeline">
+          <li class="step reveal"><span class="step__n">01</span><h4 data-i18n="p1.t">Разбор задачи</h4><p data-i18n="p1.d">Созвон, разбираю процесс и считаю, что даст автоматизация в деньгах.</p></li>
+          <li class="step reveal"><span class="step__n">02</span><h4 data-i18n="p2.t">Прототип</h4><p data-i18n="p2.d">Кликабельный макет и фиксированная смета до начала разработки.</p></li>
+          <li class="step reveal"><span class="step__n">03</span><h4 data-i18n="p3.t">Разработка</h4><p data-i18n="p3.d">Короткие итерации, демо каждую неделю — вы видите прогресс.</p></li>
+          <li class="step reveal"><span class="step__n">04</span><h4 data-i18n="p4.t">Запуск</h4><p data-i18n="p4.d">Деплой, публикация в сторах, обучение сотрудников.</p></li>
+          <li class="step reveal"><span class="step__n">05</span><h4 data-i18n="p5.t">Поддержка</h4><p data-i18n="p5.d">Мониторинг, бэкапы, доработки по мере роста бизнеса.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact glow-card reveal">
+          <div class="contact__text">
+            <span class="eyebrow">05 — <span data-i18n="contact.eyebrow">Контакты</span></span>
+            <h2 class="section__title" data-i18n="contact.title">Есть идея или рутина, которую пора автоматизировать?</h2>
+            <p data-i18n="contact.lead">Расскажите в двух словах — отвечу в течение дня и предложу решение со сроками и стоимостью.</p>
+            <ul class="contact__links" id="contactLinks"></ul>
+          </div>
+          <form class="form" id="leadForm" novalidate>
+            <label class="field">
+              <span data-i18n="form.name">Имя</span>
+              <input type="text" name="name" required autocomplete="name">
+            </label>
+            <label class="field">
+              <span data-i18n="form.contact">Telegram или телефон</span>
+              <input type="text" name="contact" required autocomplete="tel">
+            </label>
+            <fieldset class="field">
+              <legend data-i18n="form.type">Что нужно сделать</legend>
+              <div class="choice">
+                <label><input type="checkbox" name="type" value="Web"><span>Web</span></label>
+                <label><input type="checkbox" name="type" value="Mobile"><span>Mobile</span></label>
+                <label><input type="checkbox" name="type" value="Desktop"><span>Desktop</span></label>
+                <label><input type="checkbox" name="type" value="1C / Integrations"><span data-i18n="form.int">Интеграции / 1С</span></label>
+                <label><input type="checkbox" name="type" value="Bot"><span data-i18n="form.bot">Бот</span></label>
+              </div>
+            </fieldset>
+            <label class="field">
+              <span data-i18n="form.msg">Коротко о задаче</span>
+              <textarea name="message" rows="3"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--block magnetic"><span data-i18n="form.send">Отправить в Telegram</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2l-11 6.9-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg></button>
+            <p class="form__note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> Kamol · <span data-i18n="footer.city">Ташкент, Узбекистан</span></span>
+      <span class="footer__hint" data-i18n="footer.hint">Сделано вручную, без конструкторов</span>
+    </div>
+  </footer>
+
+  <!-- Case modal -->
+  <div class="modal" id="caseModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button type="button" class="modal__close" data-close aria-label="Close">✕</button>
+      <div class="modal__tags" id="modalTags"></div>
+      <h3 id="modalTitle"></h3>
+      <div class="modal__grid">
+        <div><h5 data-i18n="modal.task">Задача</h5><p id="modalTask"></p></div>
+        <div><h5 data-i18n="modal.solution">Решение</h5><ul id="modalSolution"></ul></div>
+      </div>
+      <h5 data-i18n="modal.stack">Стек</h5>
+      <ul class="chips" id="modalStack"></ul>
+    </div>
+  </div>
+
+  <script src="{{base}}assets/js/i18n.js"></script>
+  <script src="{{base}}assets/js/main.js"></script>
+</body>
+</html>
