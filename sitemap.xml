@@ -3,6 +3,7 @@
   <url>
     <loc>https://kamolcoder.github.io/</loc>
     <lastmod>2026-11-27</lastmod>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/"/>
@@ -10,8 +11,185 @@
   <url>
     <loc>https://kamolcoder.github.io/uz/</loc>
     <lastmod>2026-11-27</lastmod>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/"/>
     <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/services/web/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/web/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/web/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/web/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/services/web/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/web/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/web/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/web/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/services/mobile/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/mobile/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/mobile/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/mobile/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/services/mobile/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/mobile/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/mobile/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/mobile/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/services/desktop/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/desktop/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/desktop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/desktop/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/services/desktop/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/desktop/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/desktop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/desktop/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/services/1c-integration/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/1c-integration/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/1c-integration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/1c-integration/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/services/1c-integration/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/services/1c-integration/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/services/1c-integration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/services/1c-integration/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/projects/timkon/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/timkon/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/timkon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/timkon/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/projects/timkon/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/timkon/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/timkon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/timkon/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/projects/delivery-app/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/delivery-app/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/delivery-app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/delivery-app/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/projects/delivery-app/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/delivery-app/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/delivery-app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/delivery-app/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/projects/retail-website/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/retail-website/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/retail-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/retail-website/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/projects/retail-website/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/retail-website/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/retail-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/retail-website/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/projects/car-launcher/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/car-launcher/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/car-launcher/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/car-launcher/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/projects/car-launcher/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/car-launcher/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/car-launcher/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/car-launcher/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/projects/finance-automation/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/finance-automation/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/finance-automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/finance-automation/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/projects/finance-automation/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/finance-automation/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/finance-automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/finance-automation/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/projects/crm/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/crm/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/crm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/crm/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/projects/crm/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/crm/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/crm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/crm/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/projects/loyalty-bot/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/loyalty-bot/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/loyalty-bot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/loyalty-bot/"/>
+  </url>
+  <url>
+    <loc>https://kamolcoder.github.io/uz/projects/loyalty-bot/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kamolcoder.github.io/projects/loyalty-bot/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://kamolcoder.github.io/uz/projects/loyalty-bot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kamolcoder.github.io/projects/loyalty-bot/"/>
   </url>
 </urlset>

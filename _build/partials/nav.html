@@ -1,0 +1,24 @@
+  <!-- ========== NAV ========== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="{{logoHref}}" class="logo" aria-label="Kamol">
+        <span class="logo__mark">K</span><span class="logo__text">kamol<span class="accent">.</span>dev</span>
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="{{home}}#services" data-i18n="nav.services">Услуги</a>
+        <a href="{{home}}#cases" data-i18n="nav.cases">Проекты</a>
+        <a href="{{home}}#about" data-i18n="nav.about">Обо мне</a>
+        <a href="{{home}}#process" data-i18n="nav.process">Процесс</a>
+        <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="Language" data-active="{{lang}}">
+          <a class="lang__btn{{ruActive}}" href="{{ruHref}}" hreflang="ru" lang="ru">RU</a>
+          <a class="lang__btn{{uzActive}}" href="{{uzHref}}" hreflang="uz" lang="uz">UZ</a>
+          <span class="lang__pill" aria-hidden="true"></span>
+        </div>
+        <a href="#contact" class="btn btn--sm btn--primary magnetic nav__cta" data-i18n="nav.cta">Обсудить проект</a>
+        <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
