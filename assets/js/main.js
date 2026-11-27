@@ -16,35 +16,15 @@
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   /* ---------------- i18n ---------------- */
+  // Each language is a separate static page (/ and /uz/); JS only needs strings for dynamic UI.
   const dict = window.I18N;
-  const urlLang = new URLSearchParams(location.search).get("lang");
-  let lang = dict[urlLang] ? urlLang : (localStorage.getItem("lang") || "ru");
-  if (!dict[lang]) lang = "ru";
+  const lang = dict[document.documentElement.lang] ? document.documentElement.lang : "ru";
   const t = (key) => dict[lang][key] ?? dict.ru[key] ?? key;
-
-  function applyLang(next, animate) {
-    const run = () => {
-      lang = next;
-      document.documentElement.lang = lang;
-      document.title = t("meta.title");
-      $$("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
-      $$(".lang__btn").forEach((b) => b.classList.toggle("is-active", b.dataset.lang === lang));
-      $(".lang").dataset.active = lang;
-      localStorage.setItem("lang", lang);
-      rotator.reset();
-      renderContacts();
-    };
-    if (!animate || reduced) return run();
-    document.body.classList.add("is-switching");
-    setTimeout(() => { run(); document.body.classList.remove("is-switching"); }, 250);
-  }
-  $$(".lang__btn").forEach((b) => b.addEventListener("click", () => {
-    if (b.dataset.lang !== lang) applyLang(b.dataset.lang, true);
-  }));
 
   /* ---------------- Typing rotator ---------------- */
   const rotator = (() => {
     const el = $("#rotator");
+    if (!el) return { reset() {} };
     let words = [], wi = 0, ci = 0, deleting = false, timer;
     function tick() {
       const w = words[wi];
@@ -110,7 +90,7 @@
     revealObs.observe(el);
   });
   const tl = $(".timeline");
-  new IntersectionObserver(([e], o) => { if (e.isIntersecting) { tl.classList.add("is-visible"); o.disconnect(); } }, { threshold: 0.3 }).observe(tl);
+  if (tl) new IntersectionObserver(([e], o) => { if (e.isIntersecting) { tl.classList.add("is-visible"); o.disconnect(); } }, { threshold: 0.3 }).observe(tl);
 
   /* ---------------- Counters ---------------- */
   const countObs = new IntersectionObserver((entries) => {
@@ -130,52 +110,54 @@
 
   /* ---------------- Morphing device ---------------- */
   const device = $("#device");
-  const tabs = $$(".stage__tab");
-  const ind = $(".stage__ind");
-  const modes = ["web", "mobile", "desktop"];
-  let modeIdx = 0, morphTimer, stageVisible = true, userPicked = false;
+  if (device) {
+    const tabs = $$(".stage__tab");
+    const ind = $(".stage__ind");
+    const modes = ["web", "mobile", "desktop"];
+    let modeIdx = 0, morphTimer, stageVisible = true, userPicked = false;
 
-  function moveInd() {
-    const a = tabs[modeIdx];
-    ind.style.width = `${a.offsetWidth}px`;
-    ind.style.transform = `translateX(${a.offsetLeft - 5}px)`;
-  }
-  function setMode(i) {
-    modeIdx = i;
-    device.classList.add("is-morphing");
-    device.classList.remove(...modes.map((m) => `is-${m}`));
-    device.classList.add(`is-${modes[i]}`);
-    tabs.forEach((tb, k) => { tb.classList.toggle("is-active", k === i); tb.setAttribute("aria-selected", k === i); });
+    function moveInd() {
+      const a = tabs[modeIdx];
+      ind.style.width = `${a.offsetWidth}px`;
+      ind.style.transform = `translateX(${a.offsetLeft - 5}px)`;
+    }
+    function setMode(i) {
+      modeIdx = i;
+      device.classList.add("is-morphing");
+      device.classList.remove(...modes.map((m) => `is-${m}`));
+      device.classList.add(`is-${modes[i]}`);
+      tabs.forEach((tb, k) => { tb.classList.toggle("is-active", k === i); tb.setAttribute("aria-selected", k === i); });
+      moveInd();
+      setTimeout(() => device.classList.remove("is-morphing"), 650);
+    }
+    function scheduleMorph() {
+      clearTimeout(morphTimer);
+      if (reduced || !stageVisible) return;
+      morphTimer = setTimeout(() => { setMode((modeIdx + 1) % modes.length); scheduleMorph(); }, userPicked ? 7000 : 3600);
+    }
+    tabs.forEach((tb, i) => tb.addEventListener("click", () => { userPicked = true; setMode(i); scheduleMorph(); }));
+    new IntersectionObserver(([e]) => { stageVisible = e.isIntersecting; scheduleMorph(); }).observe(device);
+    addEventListener("resize", moveInd);
+    document.fonts?.ready.then(moveInd);
     moveInd();
-    setTimeout(() => device.classList.remove("is-morphing"), 650);
-  }
-  function scheduleMorph() {
-    clearTimeout(morphTimer);
-    if (reduced || !stageVisible) return;
-    morphTimer = setTimeout(() => { setMode((modeIdx + 1) % modes.length); scheduleMorph(); }, userPicked ? 7000 : 3600);
-  }
-  tabs.forEach((tb, i) => tb.addEventListener("click", () => { userPicked = true; setMode(i); scheduleMorph(); }));
-  new IntersectionObserver(([e]) => { stageVisible = e.isIntersecting; scheduleMorph(); }).observe(device);
-  addEventListener("resize", moveInd);
-  document.fonts?.ready.then(moveInd);
-  moveInd();
 
-  // Live-ticking numbers inside the demo
-  const lives = $$(".live");
-  if (!reduced) setInterval(() => {
-    if (!stageVisible) return;
-    lives.forEach((el) => {
-      const base = +el.dataset.base, step = +el.dataset.step;
-      const v = base + step * (1 + Math.random() * 2);
-      el.dataset.base = v;
-      el.textContent = el.dataset.int ? Math.round(v).toLocaleString("ru-RU") : v.toFixed(1);
-    });
-  }, 1400);
+    // Live-ticking numbers inside the demo
+    const lives = $$(".live");
+    if (!reduced) setInterval(() => {
+      if (!stageVisible) return;
+      lives.forEach((el) => {
+        const base = +el.dataset.base, step = +el.dataset.step;
+        const v = base + step * (1 + Math.random() * 2);
+        el.dataset.base = v;
+        el.textContent = el.dataset.int ? Math.round(v).toLocaleString("ru-RU") : v.toFixed(1);
+      });
+    }, 1400);
+  }
 
   /* ---------------- Timkon slideshow ---------------- */
   const slides = $$("#timkonSlides img");
   let si = 0;
-  if (!reduced) setInterval(() => {
+  if (!reduced && slides.length) setInterval(() => {
     slides[si].classList.remove("is-on");
     si = (si + 1) % slides.length;
     slides[si].classList.add("is-on");
@@ -194,42 +176,16 @@
     });
   }));
 
-  /* ---------------- Case modal ---------------- */
-  const modal = $("#caseModal");
-  let lastFocus;
-  const pfClass = { Web: "web", API: "web", "1С": "web", Mobile: "mobile", Android: "mobile", "ТСД": "mobile", Desktop: "desktop", Telegram: "bot" };
-
-  function openCase(id, card) {
-    const c = t("cases")[id];
-    if (!c) return;
-    $("#modalTitle").textContent = c.title;
-    $("#modalTask").textContent = c.task;
-    $("#modalSolution").replaceChildren(...c.solution.map((s) => Object.assign(document.createElement("li"), { textContent: s })));
-    $("#modalStack").replaceChildren(...c.stack.map((s) => Object.assign(document.createElement("li"), { textContent: s })));
-    const tags = [...new Set($$(".pf", card).map((p) => p.textContent))];
-    $("#modalTags").replaceChildren(...tags.map((tg) => Object.assign(document.createElement("span"), { className: `pf pf--${pfClass[tg] || "web"}`, textContent: tg })));
-    lastFocus = document.activeElement;
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    $(".modal__close").focus();
-  }
-  function closeCase() {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    lastFocus?.focus();
-  }
-  $$(".open-case").forEach((b) => b.addEventListener("click", (e) => {
-    e.stopPropagation();
-    openCase(b.dataset.case, b.closest(".case, .flagship"));
-  }));
-  $$(".case, .flagship").forEach((card) => card.addEventListener("click", (e) => {
-    if (e.target.closest("a, button")) return;
-    openCase(card.dataset.case, card);
-  }));
-  $$("[data-close]", modal).forEach((el) => el.addEventListener("click", closeCase));
-  addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("is-open")) closeCase(); });
+  /* ---------------- Whole card is clickable ---------------- */
+  $$(".case, .flagship").forEach((card) => {
+    const link = $(".case-link", card);
+    if (!link) return;
+    card.style.cursor = "pointer";
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a, button") || getSelection().toString()) return;
+      link.click();
+    });
+  });
 
   /* ---------------- Pointer effects (desktop only) ---------------- */
   if (finePointer && !reduced) {
@@ -327,6 +283,7 @@
   /* ---------------- Contacts + form ---------------- */
   function renderContacts() {
     const list = $("#contactLinks");
+    if (!list) return;
     const items = [];
     if (CONTACTS.telegram) items.push(["✈️", `@${CONTACTS.telegram}`, `https://t.me/${CONTACTS.telegram}`]);
     if (CONTACTS.phone) items.push(["📞", CONTACTS.phone, `tel:${CONTACTS.phone.replace(/[^\d+]/g, "")}`]);
@@ -343,7 +300,7 @@
 
   const form = $("#leadForm");
   const note = $("#formNote");
-  form.addEventListener("submit", async (e) => {
+  if (form) form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = form.name.value.trim();
     const contact = form.contact.value.trim();
@@ -376,5 +333,6 @@
   });
 
   $("#year").textContent = new Date().getFullYear();
-  applyLang(lang, false);
+  rotator.reset();
+  renderContacts();
 })();

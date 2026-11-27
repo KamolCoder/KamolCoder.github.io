@@ -1,0 +1,40 @@
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact glow-card reveal">
+          <div class="contact__text">
+            <span class="eyebrow">05 — <span data-i18n="contact.eyebrow">Контакты</span></span>
+            <h2 class="section__title" data-i18n="contact.title">Есть идея или рутина, которую пора автоматизировать?</h2>
+            <p data-i18n="contact.lead">Расскажите в двух словах — отвечу в течение дня и предложу решение со сроками и стоимостью.</p>
+            <ul class="contact__links" id="contactLinks"></ul>
+          </div>
+          <form class="form" id="leadForm" novalidate>
+            <label class="field">
+              <span data-i18n="form.name">Имя</span>
+              <input type="text" name="name" required autocomplete="name">
+            </label>
+            <label class="field">
+              <span data-i18n="form.contact">Telegram или телефон</span>
+              <input type="text" name="contact" required autocomplete="tel">
+            </label>
+            <fieldset class="field">
+              <legend data-i18n="form.type">Что нужно сделать</legend>
+              <div class="choice">
+                <label><input type="checkbox" name="type" value="Web"><span>Web</span></label>
+                <label><input type="checkbox" name="type" value="Mobile"><span>Mobile</span></label>
+                <label><input type="checkbox" name="type" value="Desktop"><span>Desktop</span></label>
+                <label><input type="checkbox" name="type" value="1C / Integrations"><span data-i18n="form.int">Интеграции / 1С</span></label>
+                <label><input type="checkbox" name="type" value="Bot"><span data-i18n="form.bot">Бот</span></label>
+              </div>
+            </fieldset>
+            <label class="field">
+              <span data-i18n="form.msg">Коротко о задаче</span>
+              <textarea name="message" rows="3"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--block magnetic"><span data-i18n="form.send">Отправить в Telegram</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2l-11 6.9-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg></button>
+            <p class="form__note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
